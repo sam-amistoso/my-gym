@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import NavBar from './Components/Navbar';
+import SideBar from './Components/SideBar';
+import Home from './Pages';
 
+import { GlobalStyles } from './Styles/GlobalStyles';
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <Router>
+        <SideBar isOpen={isOpen} toggle={toggle} />
+        <NavBar toggle={toggle} />
+        <Home />
+      </Router>
+    </>
   );
 }
 
