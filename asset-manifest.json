@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/my-gym/static/js/main.5fe58fa7.chunk.js",
+    "main.js.map": "/my-gym/static/js/main.5fe58fa7.chunk.js.map",
+    "runtime-main.js": "/my-gym/static/js/runtime-main.41735489.js",
+    "runtime-main.js.map": "/my-gym/static/js/runtime-main.41735489.js.map",
+    "static/js/2.784afb39.chunk.js": "/my-gym/static/js/2.784afb39.chunk.js",
+    "static/js/2.784afb39.chunk.js.map": "/my-gym/static/js/2.784afb39.chunk.js.map",
+    "index.html": "/my-gym/index.html",
+    "static/js/2.784afb39.chunk.js.LICENSE.txt": "/my-gym/static/js/2.784afb39.chunk.js.LICENSE.txt",
+    "static/media/gym-1.cbe77d15.jpg": "/my-gym/static/media/gym-1.cbe77d15.jpg",
+    "static/media/gym-2.2e85e0cd.jpg": "/my-gym/static/media/gym-2.2e85e0cd.jpg",
+    "static/media/gym-3.d8a7517d.jpg": "/my-gym/static/media/gym-3.d8a7517d.jpg",
+    "static/media/person-1.c7739895.jpg": "/my-gym/static/media/person-1.c7739895.jpg",
+    "static/media/person-2.e86faf2a.jpg": "/my-gym/static/media/person-2.e86faf2a.jpg",
+    "static/media/person-3.af127391.jpg": "/my-gym/static/media/person-3.af127391.jpg",
+    "static/media/person-4.fbb66b78.jpg": "/my-gym/static/media/person-4.fbb66b78.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.41735489.js",
+    "static/js/2.784afb39.chunk.js",
+    "static/js/main.5fe58fa7.chunk.js"
+  ]
+}
