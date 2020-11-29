@@ -44,6 +44,9 @@ export const EmailForm = styled.form`
 `;
 
 export const FormWrap = styled.div`
+  display: flex;
+  justify-items: center;
+  align-items: center;
   @media screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -51,7 +54,11 @@ export const FormWrap = styled.div`
   }
 `;
 
-export const FormLabel = styled.label``;
+export const FormLabel = styled.label`
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
 
 export const FormInput = styled.input`
   padding: 1rem 1.5rem;

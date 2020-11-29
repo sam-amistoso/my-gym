@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TeamContainer = styled.div`
-  padding: 8rem calc((100vw-1100px) / 2);
+  padding: 8rem calc((100vw - 1100px) / 2);
 `;
 
 export const TeamWrapper = styled.div`

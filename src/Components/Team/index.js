@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   TeamContainer,
   TeamDesc,
@@ -14,12 +16,30 @@ import Person1 from '../../assets/images/person-1.jpg';
 import Person2 from '../../assets/images/person-2.jpg';
 import Person3 from '../../assets/images/person-3.jpg';
 import Person4 from '../../assets/images/person-4.jpg';
+gsap.registerPlugin(ScrollTrigger);
 
 const TeamSection = () => {
+  useEffect(() => {
+    gsap.from('.animate-teams', {
+      duration: 0.5,
+      opacity: 0,
+      stagger: 0.2,
+      delay: 0.2,
+      y: -150,
+      scrollTrigger: {
+        trigger: '#Trainers',
+        endTrigger: '#Email',
+        start: 'top center',
+        end: 'start',
+        toggleActions: 'play none none reverse',
+        // markers: true,
+      },
+    });
+  }, []);
   return (
-    <TeamContainer>
+    <TeamContainer id='Trainers'>
       <TeamWrapper>
-        <TeamText>
+        <TeamText className='animate-teams'>
           <TeamTopLine>Private Coaching</TeamTopLine>
           <TeamH1>Meet our Trainers</TeamH1>
           <TeamDesc>
@@ -28,7 +48,7 @@ const TeamSection = () => {
           </TeamDesc>
         </TeamText>
 
-        <TeamText>
+        <TeamText className='animate-teams'>
           <TeamTopLine>Free Trial</TeamTopLine>
           <TeamH1>7 Day Trial</TeamH1>
           <TeamDesc>
@@ -37,22 +57,22 @@ const TeamSection = () => {
           </TeamDesc>
         </TeamText>
 
-        <TeamCard>
+        <TeamCard className='animate-teams'>
           <TeamName>Sarah</TeamName>
           <ProfileImg src={Person1} alt='person-1' />
         </TeamCard>
 
-        <TeamCard>
+        <TeamCard className='animate-teams'>
           <TeamName>Jess</TeamName>
           <ProfileImg src={Person3} alt='person-3' />
         </TeamCard>
 
-        <TeamCard>
+        <TeamCard className='animate-teams'>
           <TeamName>Amanda</TeamName>
           <ProfileImg src={Person2} alt='person-2' />
         </TeamCard>
 
-        <TeamCard>
+        <TeamCard className='animate-teams'>
           <TeamName>Greg</TeamName>
           <ProfileImg src={Person4} alt='person-4' />
         </TeamCard>

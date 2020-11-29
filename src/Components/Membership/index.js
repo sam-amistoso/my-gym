@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   MembershipCard,
   MembershipContainer,
@@ -12,18 +14,50 @@ import {
   MembershipP,
   ButtonLink,
 } from './MermbershipElements';
-
-import { FaDumbbell, FaBicycle } from 'react-icons/fa';
+import { FaDumbbell } from 'react-icons/fa';
+gsap.registerPlugin(ScrollTrigger);
 
 const Membership = () => {
+  useEffect(() => {
+    gsap.from('.animate-membership', {
+      duration: 0.5,
+      opacity: 0,
+      stagger: 0.3,
+      y: -150,
+      scrollTrigger: {
+        trigger: '.animate-membership',
+        start: 'top center',
+        end: 'bottom +=50%',
+        toggleActions: 'play none none reverse',
+        // markers: true,
+      },
+    });
+
+    gsap.from('.animate-cards', {
+      duration: 1,
+      opacity: 0,
+      stagger: 0.1,
+      delay: 0.5,
+      y: -150,
+      scrollTrigger: {
+        trigger: '.animate-membership',
+        start: 'top center',
+        end: 'bottom +=50%',
+        toggleActions: 'play none none reverse',
+        scrub: 1,
+        // markers: true,
+      },
+    });
+  }, []);
+
   return (
-    <MembershipContainer>
-      <MembershipH1>View Our Plans</MembershipH1>
-      <MembershipDesc>
+    <MembershipContainer id='Plans'>
+      <MembershipH1 className='animate-membership'>View Our Plans</MembershipH1>
+      <MembershipDesc className='animate-membership'>
         Get started today and receive 25% off your first month
       </MembershipDesc>
       <MembershipWrapper>
-        <MembershipCard>
+        <MembershipCard className='animate-cards'>
           <MembershipTitle>
             <MembershipIcon>
               <FaDumbbell />
@@ -37,10 +71,10 @@ const Membership = () => {
           <ButtonLink to='/'>Sign Up</ButtonLink>
         </MembershipCard>
 
-        <MembershipCard>
+        <MembershipCard className='animate-cards'>
           <MembershipTitle>
             <MembershipIcon>
-              <FaBicycle />
+              <FaDumbbell />
             </MembershipIcon>
             <MembershipH3>Silver</MembershipH3>
           </MembershipTitle>
@@ -51,7 +85,7 @@ const Membership = () => {
           <ButtonLink to='/'>Sign Up</ButtonLink>
         </MembershipCard>
 
-        <MembershipCard>
+        <MembershipCard className='animate-cards'>
           <MembershipTitle>
             <MembershipIcon>
               <FaDumbbell />

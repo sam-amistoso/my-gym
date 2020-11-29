@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   MobileMenu,
   NavbarLink,
@@ -8,6 +8,7 @@ import {
 } from './NavbarElements';
 import { FaBars } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
+import { animateScroll as scroll } from 'react-scroll';
 
 const NavBar = ({ toggle }) => {
   const theme = {
@@ -16,27 +17,63 @@ const NavBar = ({ toggle }) => {
     white: '#fff',
   };
 
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <NavContainer theme={theme}>
-          <NavLogo to='/' theme={theme}>
+          <NavLogo to='/' theme={theme} onClick={toggleHome}>
             LUX
           </NavLogo>
           <MobileMenu onClick={toggle}>
             <FaBars />
           </MobileMenu>
           <NavbarMenu>
-            <NavbarLink to='home' theme={theme}>
+            <NavbarLink
+              to='Home'
+              theme={theme}
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-60}
+            >
               Home
             </NavbarLink>
-            <NavbarLink to='services' theme={theme}>
+            <NavbarLink
+              to='Services'
+              theme={theme}
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-60}
+            >
               Services
             </NavbarLink>
-            <NavbarLink to='plans' theme={theme}>
+            <NavbarLink
+              to='Plans'
+              theme={theme}
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-60}
+            >
               Plans
             </NavbarLink>
-            <NavbarLink to='trainers' theme={theme}>
+            <NavbarLink
+              to='Trainers'
+              theme={theme}
+              smooth={true}
+              duration={500}
+              spy={true}
+              exact='true'
+              offset={-60}
+            >
               Trainers
             </NavbarLink>
           </NavbarMenu>
